@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+    
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    var anoAtual = 2019;
+
+    function qtdGeracoes(){
+        var anoDescobrimento = 1500;
+
+        return Math.round((anoAtual - anoDescobrimento)/28);
+
+    }
+
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+
+    mostra("Desde 1500 até " + anoAtual + ", " + qtdGeracoes() + " gerações se passaram.");
+
+
+
+</script>
