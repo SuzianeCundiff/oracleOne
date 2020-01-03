@@ -22,6 +22,16 @@
 
     mostra("O " + time + " marcou " + totalPontos + " pontos");
 
+    var totalPontosAnoAnterior = 18;
+
+    if(totalPontos == totalPontosAnoAnterior){
+        mostra("Seu time teve o mesmo rendimento do ano passado.");
+    } else if (totalPontos > totalPontosAnoAnterior){
+        mostra("Seu time foi melhor que o ano passado.");
+    } else {
+        mostra("Seu time foi pior que o ano passado.");
+    }
+
     
 </script>
 
