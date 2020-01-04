@@ -12,9 +12,13 @@
         pulaLinha();
     }
 
-    var numeroPensado = Math.floor(Math.random() * 10) + 1;
-    console.log(numeroPensado);
+    function sorteia(n){
+        return Math.floor(Math.random() * n) + 1; // Sorteia um número de 1 a n.
+        
+    }
 
+    var numeroPensado = sorteia(10);
+    //console.log(numeroPensado); --- Mostra no console o número que foi pensado, apenas para teste.
     var chute = parseInt(prompt("Em qual número eu pensei, entre 1 a 10?"));
 
     if(chute == numeroPensado){
