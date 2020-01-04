@@ -23,9 +23,12 @@
 
     if(chute == numeroPensado){
         mostra("Você acertou!");
+    }else if (chute > numeroPensado){
+        mostra("Você errou! O número pensado (<i>" + numeroPensado + "</i>) era menor que " + chute + "!");
     }else{
-        mostra("Você errou! O número pensado foi " + numeroPensado);
+        mostra("Você errou! O número pensado (<i>" + numeroPensado + "</i>) era maior que " + chute + "!");
     }
+
 
 
 </script>
