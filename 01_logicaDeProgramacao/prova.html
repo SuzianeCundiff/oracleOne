@@ -1,5 +1,7 @@
 <meta charset="UTF-8">
 
 <script>
-    document.write("Eu acertei: " + ((15/50)*100) + "%");
+    var totalQuestoes = parseInt(prompt("Quantas questões a prova possuía?"));
+    var questoesAcertadas = parseInt(prompt("Quantas questões você acertou?"))
+    document.write("Eu acertei: " + ((questoesAcertadas/totalQuestoes)*100) + "%");
 </script>
