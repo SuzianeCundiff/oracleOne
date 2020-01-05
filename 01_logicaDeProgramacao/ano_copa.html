@@ -1,0 +1,28 @@
+
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+
+    //var dataLimite = parseInt(prompt("Entre com a data limite: ")); permite que o usuário escolha o ano limite.
+    var anoCopa = 1930;
+    var anoAtual = new Date().getFullYear(); //seleciona o ano, a partir da data e hora do dispositivo.
+    
+    mostra("<b>Teve Copa em:</b>");
+
+    while(anoCopa <= anoAtual/*dataLimite*/){
+        mostra(anoCopa);
+        anoCopa = anoCopa + 4;
+    }
+
+</script>
+
+ 
