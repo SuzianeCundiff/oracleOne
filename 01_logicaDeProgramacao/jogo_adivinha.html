@@ -19,17 +19,25 @@
 
     var numeroPensado = sorteia(10);
     //console.log(numeroPensado); --- Mostra no console o número que foi pensado, apenas para teste.
-    var chute = parseInt(prompt("Em qual número eu pensei, entre 1 a 10?"));
 
-    if(chute == numeroPensado){
-        mostra("Você acertou!");
-    }else if (chute > numeroPensado){
-        mostra("Você errou! O número pensado (<i>" + numeroPensado + "</i>) era menor que " + chute + "!");
-    }else{
-        mostra("Você errou! O número pensado (<i>" + numeroPensado + "</i>) era maior que " + chute + "!");
+    var tentativa = 1;
+
+    while (tentativa <= 3){
+        
+        var chute = parseInt(prompt("Em qual número eu pensei, entre 1 a 10?"));
+
+        if(chute == numeroPensado){
+            mostra("Você acertou!");
+            break;
+        }else if (chute > numeroPensado){
+            alert("Você errou! O número pensado é menor que " + chute + "!");
+        }else{
+            alert("Você errou! O número pensado é maior que " + chute + "!");
+        }
+
+        tentativa++;
     }
-
-
+    mostra("O número pensado era " + numeroPensado);
 
 </script>
 
