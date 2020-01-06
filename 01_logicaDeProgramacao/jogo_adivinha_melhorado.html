@@ -5,7 +5,7 @@
 
  <script>
      
-    var segredo = 5; 
+    var segredo = Math.floor(Math.random() * 10) + 1; //sorteia um número de 1 a 10. 
 
     var entradaUsuario = document.querySelector("input");
     
@@ -15,6 +15,9 @@
         }else{
             alert("Você errou!");
         }
+
+        entradaUsuario.value = ""; //limpa o valor inserido pelo usuário, anteriormente.
+        entradaUsuario.focus(); //deixa o indicador de escrita posicionado para que o usuário possa fazer outra tentativa.
     }
 
     var botao = document.querySelector("button");
