@@ -5,20 +5,31 @@
 
  <script>
      
-    var segredo = Math.floor(Math.random() * 10) + 1; //sorteia um número de 1 a 10. 
-
+    //var segredo = Math.floor(Math.random() * 10) + 1; //sorteia um número de 1 a 10. 
+    var segredos = [1,4,7,10];
+    
     var entradaUsuario = document.querySelector("input");
     
     function verifica(){
-        if(entradaUsuario.value == segredo){
-            alert("Você acertou!");
-        }else{
-            alert("Você errou!");
+
+        var achou = false;
+
+        for(var i=0; i < segredos.length; i++){
+            if(entradaUsuario.value == segredos[i]){
+                alert("Você acertou!");
+                achou = true;
+                break;
+            }
         }
 
+        if(achou == false){
+            alert("Você errou!");
+        }
+        
         entradaUsuario.value = ""; //limpa o valor inserido pelo usuário, anteriormente.
         entradaUsuario.focus(); //deixa o indicador de escrita posicionado para que o usuário possa fazer outra tentativa.
     }
+    
 
     var botao = document.querySelector("button");
     botao.onclick = verifica; //faz com que a função verifica seja guardada na variável botao, ou seja a função verifica é  executada quando o botao for pressionado.
