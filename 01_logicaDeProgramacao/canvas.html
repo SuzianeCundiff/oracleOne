@@ -1,0 +1,39 @@
+<!--<meta charset="UTF-8"> Por eu estar apenas desenhando na tela, não será necessário resolver problemas de acentuação-->
+
+<!--a tag canvas tem a finalidade de uma tela em branco, ou seja, uma área em que podemos desenhar-->
+<!--o canvas, por padrão, é branco. Width == largura, height == altura-->
+<canvas width = '600' height='400'></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas'); //agora o JS pode editar o canvas que está no mundo HTML.
+    var pincel = tela.getContext('2d');
+    /*
+    pincel.fillStyle = 'lightgrey'; //não é uma função, é uma atribuição.
+    //fillStyle precisa vir antes de fillRect, do contrario, a cor de preenchimento do retangulo continuará sendo preta.
+    pincel.fillRect(0, 0, 600, 400); // (xIncial, yInicial, larguraTamnho, alturaTamanho), por padrão, o preenchimento é feito com a cor preta.
+    */
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400, 0, 600, 400);
+
+    //criamos um retangulo
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    pincel.moveTo(300, 200);
+    pincel.lineTo(200, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    //criamos uma bola
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.arc(300, 200, 50, 0, 2*3.14); //(xInicial, yInicial, raio, anguloInicial, anguloFinal) - os angulos estão em radiano.
+    pincel.fill();
+
+
+
+</script>
