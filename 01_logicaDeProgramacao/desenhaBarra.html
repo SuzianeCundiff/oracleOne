@@ -1,0 +1,54 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function desenhaRetangulo(x, y, largura, altura, cor){
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, largura, altura);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(x, y, largura, altura);
+    }
+
+    function desenhaTexto(x, y, texto){
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.font = '15px Georgia';
+        pincel.fillStyle = 'black';
+        pincel.fillText(texto, x, y);
+    }
+
+    function desenhaBarra(x, y, ano, cor, texto){
+
+        desenhaTexto(x, y-10, texto);
+
+        for(j=0; j<ano.length; j++){
+            desenhaRetangulo(x, y, 50, ano[j], cor[j]);
+            y = y + ano[j];
+        }
+    }
+
+    function desenhaLegenda(x, y, cor, texto){
+        
+        for(j=0; j<cor.length; j++){
+            desenhaTexto(x+35, y+10, texto[j]);
+            desenhaRetangulo(x, y, 30, 10, cor[j]);
+            y = y + 20; //dá o espaçamento de um retângulo, entre um retângulo colorido e outro.
+        }
+    }
+
+    var ano2015 = [50, 25, 20, 5];
+    var ano2016 = [65, 20, 13, 2];
+
+    var cores = ['blue', 'green', 'yellow', 'red'];
+    var navegadores = ['Chrome', 'Firefox', 'Safari', 'Outros'];
+
+    desenhaBarra(50, 50, ano2015, cores, '2015');
+    desenhaBarra(150, 50, ano2016, cores, '2016');
+    desenhaLegenda(250, 50, cores, navegadores);
+    desenhaTexto(10, 200, 'Quais navegadores nossos alunos mais utilizavam em 2015 e 2016.')
+    
+</script>
