@@ -1,0 +1,22 @@
+<canvas width='600' height='400'></canvas>
+
+<script>
+
+    function desenhaTrianguloRetangulo(xa, ya, xc, yc, cor){
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.beginPath();
+        pincel.moveTo(xa, ya);
+        pincel.lineTo(xa, yc);
+        pincel.lineTo(xc, yc);
+        pincel.fillStyle = cor;
+        pincel.fill();
+    
+    }
+
+    desenhaTrianguloRetangulo(50, 50, 400, 400, 'black');
+    desenhaTrianguloRetangulo(100, 175, 275, 350, 'white');
+
+</script>
