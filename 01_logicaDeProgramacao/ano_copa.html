@@ -1,3 +1,6 @@
+<!--
+    O objetivo desse programa é calcular quantas copas do mundo houveram desde uma data expecífica, nesse caso o ano padrão é 1930, até a data atual. Levando em consideração que a Copa acontece a cada 4 anos. 
+-->
 
 <meta charset="UTF-8">
 
@@ -9,15 +12,20 @@
 
     function mostra(frase){
         document.write(frase);
-        pulaLinha();
+    pulaLinha();
     }
 
-    //var dataLimite = parseInt(prompt("Entre com a data limite: ")); permite que o usuário escolha o ano limite.
+    //permite que o usuário escolha o ano limite/"atual".
+    //var dataLimite = parseInt(prompt("Entre com a data limite: "));
+        
     var anoCopa = 1930;
-    var anoAtual = new Date().getFullYear(); //seleciona o ano, a partir da data e hora do dispositivo.
-    
+
+    //seleciona o ano, a partir da data e hora do dispositivo.
+    var anoAtual = new Date().getFullYear();
+        
     mostra("<b>Teve Copa em:</b>");
 
+    //trocar a variável anoAtual por dataLimite caso você tenha habilitado que o usuário entre com a data do ano atual.  
     while(anoCopa <= anoAtual/*dataLimite*/){
         mostra(anoCopa);
         anoCopa = anoCopa + 4;

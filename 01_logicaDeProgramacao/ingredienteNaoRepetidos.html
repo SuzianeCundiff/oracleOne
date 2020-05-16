@@ -1,6 +1,10 @@
+<!--
+    O obejetivo desse programa é que o usuário digite os igredientes necessários para uma receita, mas nenhum ingrediente pode ser repetido.
+-->
+
 <meta charset="UTF-8">
 
-<h1>Receitas do Yan</h1>
+<h1>Receita</h1>
 
 <script>
 
@@ -33,6 +37,10 @@
         }
               
     }
-    console.log(ingredientes);
+
+    for(let indice = 0; indice<ingredientes.length; indice++){
+        var numeroIngrediente = indice+1;
+        document.write(numeroIngrediente + " - " + ingredientes[indice] + "</br></br>");
+    }
 
 </script>

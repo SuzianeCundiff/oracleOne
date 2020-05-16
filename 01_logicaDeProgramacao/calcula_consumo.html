@@ -1,17 +1,67 @@
+<!--
+   O objetivo desse programa é calcular o quantidade de combustivel necessária para percorrer determinado percurso e, também, estimar o valor a ser gasto com o alcool e gasolina para percorrer esse mesmo trageto.
+-->
+
 <meta charset="UTF-8">
 
 <h3>Álcool ou Gasolina?</h3>
 
 <script>
 
-   var tanqueCarro = 40;
-   var caminhoComGasolina = 480;
-   var consumoDeGasolina = caminhoComGasolina/tanqueCarro;
+   function pulaLinha(){
+      document.write("<br>");
+   }
 
-   document.write("O consumo de gasolina gasto para percorrer " + caminhoComGasolina + " km foi de "  + consumoDeGasolina + " km/l");
+   function mostra(frase){
+      document.write(frase);
+   }
 
-   var caminhoComAlcool = 300;
-   var consumoDeAlcool = caminhoComAlcool/tanqueCarro;
-   document.write("<br> O consumo de alcool gasto para percorrer " + caminhoComAlcool + " km foi de "  + consumoDeAlcool + " km/l");
+   // Autonomia do carro -> Consumo médio = Distância percorrida / Quantidade de litros utilizada
+   var consumoMedioDoCarro = 10; // Km/L
+
+   // Distancia a ser percorrida.
+   var distanciaAteDestino = 500; // Km
+
+   // valor médio da Gasolina 
+   var valorGasolina = 4.69;
+
+   // valor médio do Alcool
+   var valorAlcool = 3.45;
+
+   // Combustível necessário para a viagem = Distância até o destino / Consumo médio do carro
+   var combustivelNecessario = distanciaAteDestino/consumoMedioDoCarro;
+
+   // Para calcular o preço com o combustível = Combustível necessário para a viagem X Valor de preço médio do combustível
+   var valorTotalGastoComGasolina = combustivelNecessario*valorGasolina;
+         
+   var valorTotalGastoComAlcool = combustivelNecessario*valorAlcool;
+
+   mostra("Para percorrer " + distanciaAteDestino + "km em um carro que possui um consumo médio de "  + consumoMedioDoCarro + " Km/L, você irá gastar em média: ");
+
+   pulaLinha();
+   pulaLinha();
+
+   //O .toFixed() arredonda o numero à casa decimal mais próxima e podendo escolher a quantidade de casas decimais. O formato resultante é string, daí usar o parseFloat() também.
+   mostra("R$ " + parseFloat(valorTotalGastoComGasolina.toFixed(2)) + " reais com gasolina, levando em conta que o valor do litro está em " + valorGasolina + " reais");
+
+   pulaLinha();
+
+   mostra("R$ " + parseFloat(valorTotalGastoComAlcool.toFixed(2)) + " reais com Alcool, levando em conta que o valor do litro está em " + valorAlcool + " reais");
+
+
+      /*
+      Segundo um padrão estabelecido já há alguns anos e utilizado pela Anfavea (Associação Nacional dos Fabricantes de Veículos Automotores), o litro do etanol rende, em média, 70% da mesma quantidade de gasolina. Portanto, para descobrir qual é o mais vantajoso, você deveria multiplicar o valor do litro da gasolina por 0,7. Se o resultado for inferior ao preço do litro do álcool, valeria a pena abastecer com gasolina. Já se for maior, então a opção mais barata seria o álcool.
+
+      Para facilitar o entendimento, se o litro do etanol está saindo a R$ 3,45 e o da gasolina a R$ 4,69, nos exemplos acima, basta multiplicarmos 4,69 por 0,7, o resultado será de 3,28. Ou seja, inferior aos R$ 3,45, portanto, abastecer com gasolina neste caso seria a melhor opção.
+      */
+
+   // valor alternativo da Gasolina 
+   //var valorAlternativoGasolina = 4.69*0.7;
+
+   //var valorTotalGastoComGasolinaAlternativa = combustivelNecessario*valorAlternativoGasolina;
+
+   //pulaLinha();
+
+   //mostra("R$ " + parseFloat(valorTotalGastoComGasolinaAlternativa.toFixed(2)) + " reais com Gasolina alternativa, levando em conta que o valor do litro está em " + parseFloat(valorAlternativoGasolina.toFixed(2)) + " reais");
 
 </script>
