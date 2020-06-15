@@ -1,0 +1,35 @@
+<canvas width='600' height='400'></canvas>
+
+<script>
+
+    function desenhaTrianguloInterno(xa, ya, xc, yc){
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = 'white'; //por padrão será branco para seguir a mesma cor de fundo do navegador.
+        pincel.beginPath();
+        pincel.moveTo((6*xa + xc)/7, (9*ya + 5*yc)/14); 
+        pincel.lineTo((6*xa + xc)/7, (ya + 6*yc)/7);
+        pincel.lineTo((5*xa + 9*xc)/14, (ya + 6*yc)/7);
+        pincel.fill();
+    
+    }
+
+    function desenhaEsquadro(xa, ya, xc, yc, cor){
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d')
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.moveTo(xa, ya);
+        pincel.lineTo(xa, yc);
+        pincel.lineTo(xc, yc);
+        pincel.fill();
+
+        desenhaTrianguloInterno(xa, ya, xc, yc);
+    }
+
+    desenhaEsquadro(100, 175, 275, 350, 'black');
+
+</script>
