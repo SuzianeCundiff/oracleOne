@@ -1,0 +1,48 @@
+<canvas width="600" height="400"></canvas>
+
+<!--
+    Desenha uma linha, a partir de vários pontos, a medida que o usuário
+    preciona o botão esquerdo do mouse.
+-->
+
+
+<br><br>
+Escolha uma cor <input type="color">
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    //armazena os atributos da tag input na variável cor
+    var cor = document.querySelector('input');
+    
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var desenhando = false;
+
+    function desenhaLinha(mouseEvent){
+
+        if(desenhando){
+            let x = mouseEvent.pageX - tela.offsetLeft;
+            let y = mouseEvent.pageY - tela.offsetTop;
+
+            pincel.fillStyle = cor.value; // usa o atributo cor da tag input.
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2*3.14);
+            pincel.fill();
+        }
+    }
+
+    tela.onmousedown = function (){
+        desenhando = true;
+    }
+
+    tela.onmouseup = function (){
+        desenhando = false;
+    }
+
+    tela.onmousemove = desenhaLinha;
+
+</script>
