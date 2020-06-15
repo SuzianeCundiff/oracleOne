@@ -1,0 +1,61 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    var radius = 10;
+
+    var colors = ['blue', 'red', 'green'];
+    var arrayPosition = 0;
+    
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    // funcção que cria uma bolinha ao apertar o botão esquerdo do mouse.
+    function desenhaBolinha(mouseEvent){
+        let x = mouseEvent.pageX - tela.offsetLeft; // - tela.offsetLeft, faz com que a parte em branco antes do canvas não conte caso seja clicado.
+        let y = mouseEvent.pageY - tela.offsetTop; // - tela.offsetTop, faz com que a parte em branco antes do canvas não conte caso seja clicado.
+        
+        /* 
+            se a criação da variavel radius for posta aqui
+            então toda vez que apertarmos o botão esquerdo do mouse com a tecla shift pressionada,
+            o valor do radius será acrescido com o numero pre-determinado. Nesse caso 10.
+            
+            var radius = 10;
+        */
+        // let radius = 10;
+
+        // se o shift for precionado e o radius for menor que 40, é acrescentado 10 ao radius da bolinha
+        if(mouseEvent.shiftKey && radius < 40){
+            radius += 10;
+        }
+
+        if(mouseEvent.altKey && radius > 10){
+            radius -= 5;
+        }
+
+        pincel.fillStyle = colors[arrayPosition];
+        pincel.beginPath();
+        pincel.arc(x, y, radius, 0, 2*3.14);
+        pincel.fill();
+
+    }
+
+    tela.onclick = desenhaBolinha;
+
+    //função que muda a cor da Bolinha ao apertar o botão direito do mouse.
+    function mudaCor() {
+
+        arrayPosition += 1;
+
+        if (arrayPosition >= colors.length){
+            arrayPosition = 0;
+        }
+
+        return 0;
+    }
+
+    tela.oncontextmenu = mudaCor;
+
+</script>
