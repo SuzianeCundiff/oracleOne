@@ -1,0 +1,78 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    var x = 50;
+    var y = 50
+    var raio = 10;
+
+    var sentido = 1; // usado na função animacaoBateVolta;
+
+    var fatorCrescimento = 0; // usado na função animacaoPulsante
+
+    function preparaTela(){
+        pincel.fillStyle = 'black';
+        pincel.fillRect(0, 0, 600, 400);
+    }
+
+    function desenhaCirculo(posX, posY, raio){
+        pincel.fillStyle = 'yellow';
+        pincel.beginPath();
+        pincel.arc(posX, posY, raio, 0, (2 * Math.PI));
+        pincel.fill();
+    }
+
+    function limpaTela(){
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function animacaoPortal(){
+        limpaTela();
+        preparaTela();
+        desenhaCirculo(x, y, raio);
+        x++;
+
+        if(x==602){
+            x=1;
+        }
+    } 
+
+    function animacaoBateVolta(){
+        limpaTela();
+        preparaTela();
+
+        if(x > (600-raio)){
+
+            sentido = -1;
+        
+        } else if(x < (0+raio)){
+        
+            sentido = 1;
+        
+        }
+        desenhaCirculo(x, y, raio);
+        x = x + sentido;
+    }
+
+    function animacaoPulsante(){
+        limpaTela();
+        preparaTela();
+
+        if(raio>30){
+            fatorCrescimento = -1;
+        } else if (raio<11){
+            fatorCrescimento = 1
+        }
+
+        raio +=fatorCrescimento
+        desenhaCirculo(x, y, raio);
+    }
+
+    // main
+    preparaTela();
+    setInterval(animacaoPortal, 24);
+    
+</script>
