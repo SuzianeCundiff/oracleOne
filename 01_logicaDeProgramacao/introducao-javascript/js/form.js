@@ -11,28 +11,30 @@ botaoAcicionar.addEventListener("click", function(event){
     // recolhe informações do paciente apartir do formulário
     var paciente = recolheInfoDoForm(form);
 
-    // monta a estrura HTML que deve ser adicionada ao arquivo principal
-    var pacienteTr = montaTr(paciente);
-
     var erros = validaPaciente(paciente);
-    console.log(erros);
 
     if(erros.length > 0){
         escreveMensagemDeErro(erros);
         return;
     }
     
-    // adiciona o paciente na tabela
-    var addTabela = document.querySelector("#tabela-pacientes");    
-    addTabela.appendChild(pacienteTr);
-
     var mensagensDeErro = document.querySelector('#mensagem-erro');
     mensagensDeErro.innerHTML = "";
 
+    adicionaPacienteNaTabela(paciente);
     // remove os dados inseridos pelo usuário assim que o form é submetido.
     form.reset();
 
 });
+
+function adicionaPacienteNaTabela(paciente){
+    // monta a estrura HTML que deve ser adicionada ao arquivo principal
+    var pacienteTr = montaTr(paciente);
+    // adiciona o paciente na tabela
+    var addTabela = document.querySelector("#tabela-pacientes");    
+    addTabela.appendChild(pacienteTr);
+
+}
 
 function recolheInfoDoForm(info){
 
