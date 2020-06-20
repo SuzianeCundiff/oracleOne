@@ -2,47 +2,121 @@ var botaoAcicionar = document.querySelector("#adicionar-paciente");
 
 // Adiciona paciente a tabela
 botaoAcicionar.addEventListener("click", function(event){
-
-    form = document.querySelector("#cadastra-paciente");
-
-    var nome = form.nome.value;
-    var peso = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura.value;
-    
-    var pacienteTr = document.createElement("tr");
-
-    var nomeTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var gorduraTd = document.createElement("td");
-    var imcTd = document.createElement("td");
-
-    pacienteTr.classList.add("paciente");
-    nomeTd.classList.add("info-nome");
-    pesoTd.classList.add("info-peso");
-    alturaTd.classList.add("info-altura");
-    gorduraTd.classList.add("info-gordura");
-    imcTd.classList.add("info-imc");
-
-    nomeTd.textContent = nome;
-    pesoTd.textContent = peso;
-    alturaTd.textContent = altura;
-    gorduraTd.textContent = gordura;
-    imcTd.textContent = calculaIMC(peso, altura);
-
-    pacienteTr.appendChild(nomeTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(gorduraTd);
-    pacienteTr.appendChild(imcTd);
-
-    var addTabela = document.querySelector("#tabela-pacientes");
-    
-    addTabela.appendChild(pacienteTr);
-
-    console.log(addTabela);
-
+    // previne que o formulário siga sua configuração padrão
     event.preventDefault();
 
+    // cria o objeto form.
+    form = document.querySelector("#cadastra-paciente");
+
+    // recolhe informações do paciente apartir do formulário
+    var paciente = recolheInfoDoForm(form);
+
+    // monta a estrura HTML que deve ser adicionada ao arquivo principal
+    var pacienteTr = montaTr(paciente);
+
+    var erros = validaPaciente(paciente);
+    console.log(erros);
+
+    if(erros.length > 0){
+        escreveMensagemDeErro(erros);
+        return;
+    }
+    
+    // adiciona o paciente na tabela
+    var addTabela = document.querySelector("#tabela-pacientes");    
+    addTabela.appendChild(pacienteTr);
+
+    var mensagensDeErro = document.querySelector('#mensagem-erro');
+    mensagensDeErro.innerHTML = "";
+
+    // remove os dados inseridos pelo usuário assim que o form é submetido.
+    form.reset();
+
 });
+
+function recolheInfoDoForm(info){
+
+    paciente = {
+        nome: form.nome.value,
+        peso: form.peso.value,
+        altura: form.altura.value,
+        gordura: form.gordura.value,
+        imc: calculaIMC(form.peso.value, form.altura.value)
+    };
+
+    return paciente;
+}
+
+function montaTd(dado, classe){
+    var td = document.createElement("td");
+    
+    td.classList.add(classe);
+    td.textContent = dado;
+
+    return td;
+}
+
+function montaTr(paciente){
+    var pacienteTr = document.createElement("tr");
+    pacienteTr.classList.add("paciente");
+
+    pacienteTr.appendChild( montaTd(paciente.nome, "info-nome") );
+    pacienteTr.appendChild( montaTd(paciente.peso, "info-peso") );
+    pacienteTr.appendChild( montaTd(paciente.altura, "info-altura") );
+    pacienteTr.appendChild( montaTd(paciente.gordura, "info-gordura") );
+    pacienteTr.appendChild( montaTd(paciente.imc, "info-imc") );
+
+    return pacienteTr;
+}
+
+function validaPaciente(paciente){
+    var erros = [];
+
+    if ( paciente.nome.length == 0 ){
+        erros.push("Insira um nome");
+    }
+    if ( paciente.peso.length == 0 ){
+        erros.push("Insira um valor em peso");
+    }
+    if ( paciente.altura.length == 0 ){
+        erros.push("Insira um valor em altura");
+    }
+    if ( paciente.gordura.length == 0 ){
+        erros.push("Insira um valor em gordura");
+    }
+    if ( !validaPeso(paciente.peso) ){
+        erros.push("Peso Inválido");
+    }
+    if ( !validaAltura(paciente.altura) ){
+        erros.push("Altura Inválida");
+    }
+    if ( !validaGordura(paciente.gordura) ){
+        erros.push("Gordura Inválida");
+    }
+
+    return erros;
+}
+
+function montaLi(dado){
+    var li = document.createElement("li");
+
+    li.textContent = dado;
+
+    return li;
+}
+
+function escreveMensagemDeErro(erros){
+    var ul = document.querySelector('#mensagem-erro');
+    ul.innerHTML = "";
+
+    erros.forEach(erro => {
+        ul.appendChild ( montaLi(erro) );
+    });
+
+    /** essa estrutura de repetição for equivale ao forEach utilizado.
+
+    for (var i = 0; i < erros.length; i++){
+        ul.appendChild ( montaLi(erros[i]) );
+    }
+    */
+}
