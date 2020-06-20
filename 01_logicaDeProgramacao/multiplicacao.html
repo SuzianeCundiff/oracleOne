@@ -1,0 +1,27 @@
+<button class="botao">Calcula</button>
+<input class="numerador">
+<input class="denominador">
+<span class="resultado"></span>
+
+<script>
+
+    var botao = criaObjeto('.botao');
+    var numerador = criaObjeto('.numerador');
+    var denominador = criaObjeto('.denominador');
+    var resultado = criaObjeto('.resultado');
+
+    botao.addEventListener('click', function() {
+        resultado.textContent = calculaMultiplicacao(numerador, denominador);
+
+    });
+
+    function criaObjeto(classe){
+        return document.querySelector(classe);
+    }
+
+    function calculaMultiplicacao(numerador, denominador){
+        return (numerador.value * denominador.value).toFixed(2);
+    }
+
+
+</script>
