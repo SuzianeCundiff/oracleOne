@@ -4,7 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./reset.css">
-        <link rel="stylesheet" href="./css3parte03.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css3barbealura.css">
 
         <title>Contatos - Barbealura</title>
     </head>
@@ -25,85 +30,61 @@
             </div>
         </header>
         
-        <div id="section-contact">
-            <h2 id="titulo-01">Entre em contato</h2>
+        <main>
+            <section class="light-background" id="section-contact">
+                <h2 class="title-light-bg">Entre em contato</h2>
 
-            <form>
-                <label for="nome-sobrenome">Nome</label>
-                <input type="text" name="nome-sobrenome" id="nome-sobrenome" placeholder="Exemplo Silva" class="input-modificado" required>
+                <form>
+                    <label for="nome-sobrenome">Nome</label>
+                    <input type="text" name="nome-sobrenome" id="nome-sobrenome" placeholder="Exemplo Silva" class="input-modificado" required>
 
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" placeholder="exemplo@email.com" class="input-modificado" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="exemplo@email.com" class="input-modificado" required>
 
-                <label for="celular">Celular</label>
-                <input type="tel" name="celular" id="celular" placeholder="(90) 9090-9090" class="input-modificado" required>
+                    <label for="celular">Celular</label>
+                    <input type="tel" name="celular" id="celular" placeholder="(90) 9090-9090" class="input-modificado" required>
 
-                <label for="mensagem">Mensagem</label>
-                <textarea type="textArea" name="mensagem" id="mensagem" placeholder="Escreva sua mensagem." rows="6" class="input-modificado" required></textarea>
+                    <label for="mensagem">Mensagem</label>
+                    <textarea type="textArea" name="mensagem" id="mensagem" placeholder="Escreva sua mensagem." rows="6" class="input-modificado" required></textarea>
 
-                <fieldset>
-                    <legend>Como prefere o nosso contato?</legend>
-                    
-                    <label for="radio-email">
-                        <input type="radio" name="tipo-contato" id="radio-email" checked>
-                        E-mail
+                    <fieldset>
+                        <legend>Como prefere o nosso contato?</legend>
+                        
+                        <label for="radio-email">
+                            <input type="radio" name="tipo-contato" id="radio-email" checked>
+                            E-mail
+                        </label>
+                        
+                        <label for="radio-ligacao">
+                            <input type="radio" name="tipo-contato" id="radio-ligacao">
+                            Ligação
+                        </label>
+                        
+                        <label for="radio-whatsapp">
+                            <input type="radio" name="tipo-contato" id="radio-whatsapp">
+                            Whatsapp
+                        </label>           
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Qual horário prefere ser atendido?</legend>
+                        <select>
+                            <option>Manhã</option>
+                            <option>Tarde</option>
+                            <option>Noite</option>
+                        </select>
+                    </fieldset>
+
+                    <label class="checkbox" for="checkbox">
+                        <input type="checkbox" name="checkbox" id="checkbox" checked>
+                        Gostaria de receber nossas novidades por e-mail?
                     </label>
-                    
-                    <label for="radio-ligacao">
-                        <input type="radio" name="tipo-contato" id="radio-ligacao">
-                        Ligação
-                    </label>
-                    
-                    <label for="radio-whatsapp">
-                        <input type="radio" name="tipo-contato" id="radio-whatsapp">
-                        Whatsapp
-                    </label>           
-                </fieldset>
-
-                <fieldset>
-                    <legend>Qual horário prefere ser atendido?</legend>
-                    <select>
-                        <option>Manhã</option>
-                        <option>Tarde</option>
-                        <option>Noite</option>
-                    </select>
-                </fieldset>
-
-                <label class="checkbox" for="checkbox">
-                    <input type="checkbox" name="checkbox" id="checkbox" checked>
-                    Gostaria de receber nossas novidades por e-mail?
-                </label>
 
 
-                <input type="submit" id="submit" value="Enviar formulário">
-            </form>
-        </div>
-
-        <div id="section-opening-hours">
-            <h2 id="titulo-02">Horário de Funcionamento</h2>
-            
-            <table>
-                <thead>
-                    <tr id="tabela-titulo">
-                        <th colspan="2">Aberto</th>
-                    </tr>
-                    <tr>
-                        <th>Dia</th>
-                        <th>Hora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Segunda à Sexta</td>
-                        <td>07:00 - 20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Sábado e Domingo</td>
-                        <td>08:00 - 18:00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                    <input type="submit" id="submit" value="Enviar formulário">
+                </form>
+            </section>
+        </main>
 
         <footer>
             <div class="section-00">

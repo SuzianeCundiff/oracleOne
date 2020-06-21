@@ -1,0 +1,348 @@
+body {
+    background-color: rgb(32,34,33);
+    font-family: 'Montserrat', sans-serif;
+}
+
+p, li{
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    line-height: normal;
+}
+
+strong{
+    font-weight: bold;
+}
+
+em{
+    font-style: italic;
+}
+
+/* -------------- header -------------- */
+
+.section-00 {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+    align-content: center;
+    padding: 30px 0;
+}
+
+h1 {
+    display: inline-block;
+    color: whitesmoke;
+    border: 8px solid whitesmoke;
+    padding: 8px;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h1 a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+nav {
+    position: absolute;
+    top: 50px;
+    right: 0;
+}
+
+nav li {
+    display: inline;
+    padding: 0 0 0 24px;
+}
+
+nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+nav a:hover {
+    color: rgb(42, 72, 172);
+}
+
+nav a:active {
+    color: rgb(10, 35, 116);
+}
+
+/* -------------- main and sections -------------- */
+
+
+section{
+    width: 940px;
+    margin: 0 auto;
+    padding: 28px;
+    text-align: justify;
+}
+
+section.light-background{
+    background-color: whitesmoke;
+}
+
+section h2{
+    width: 100%;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    padding: 16px 0;
+    margin-bottom: 20px;
+}
+
+section .title-dark-bg{
+    background-color: whitesmoke;
+    color: rgb(32,34,33);
+}
+
+section .title-light-bg{
+    background-color: rgb(32,34,33);
+    color: whitesmoke;
+}
+
+/*
+***************************
+            Home      
+***************************
+*/
+
+/* -------------- banner -------------- */
+
+#img-banner {
+    width: 100%;
+    height : 580px;
+}
+
+/* -------------- section about -------------- */
+
+
+#img-about {
+    width: 32%;
+    padding-left: 4%;
+    filter: brightness(85%);
+}
+
+#paragraphs-about{
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    padding-left: 80px;
+}
+
+#paragraphs-about p {
+    color: whitesmoke;
+    font-weight: 400;
+    padding-bottom: 24px;
+}
+
+#missao strong {
+    font-size: 22px;
+}
+
+#missao em {
+    color: rgb(42, 72, 172);
+    padding-left: 32px;
+}
+
+/* -------------- section benefits -------------- */  
+
+#lista-beneficios {
+    display: inline-block;
+    vertical-align: top;
+    width: 38%;
+    padding-left: 8%;
+}
+
+.beneficio{
+    font-style: italic;
+    padding: 5px;
+}
+
+.beneficio:before {
+    content: "🟊 ";
+}
+
+
+
+#img-beneficios {
+    width: 50%;
+}
+
+/* -------------- section video -------------- */
+
+.video-trailer{
+    margin: 0 auto;
+}
+
+/* -------------- section opening hours -------------- */
+
+table{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 50px;
+    width: 40%;
+}
+
+thead{
+    background-color: #9b120b;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+tbody{
+    background-color: whitesmoke;
+    color: rgb(32,34,33);
+}
+
+th, td{
+    border: 1px solid #640d08;
+    padding: 6px 15px;
+}
+
+#tabela-titulo{
+    background-color: #640d08;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tabela-titulo th{
+    padding: 10px 15px;
+}
+
+/*
+***************************
+          Services      
+***************************
+*/
+
+.services{
+    padding: 50px 0;
+}
+
+.services li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 0 1.5%;
+    border: 2px dashed #000;
+    border-radius: 2%;
+    padding: 28px 20px;
+}
+
+.services li:hover {
+    color: rgb(42, 72, 172);
+    border-color: rgb(42, 72, 172);
+    box-shadow: 10px 10px 20px 5px rgb(32,34,33);
+}
+
+.services li:active {
+    color: rgb(10, 35, 116);
+    border-color: rgb(10, 35, 116);
+}
+
+.services h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.services img {
+    width: 100%;
+    border-radius: 2%;
+}
+
+.service-description {
+    color: rgb(32,34,33);
+    font-size: 16px;
+    margin: 8px;
+}
+
+.service-price {
+    color: rgb(32,34,33);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+/*
+***************************
+          Contact      
+***************************
+*/
+
+/* -------------- section benefits -------------- */
+
+#section-contact {
+    text-align: justify;
+}
+
+
+form{
+    width: 940px;
+    margin: 0 auto;
+}
+
+form label, form legend{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: rgb(32,34,33);
+}
+
+form legend{
+    margin-bottom: 16px;
+}
+
+
+.input-modificado{
+    display: block;
+    width: 30%;
+    margin-bottom: 12px;
+    padding: 8px;
+}
+
+.checkbox{
+    margin: 20px 0;
+}
+
+#submit{
+    width: 40%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #044085;
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s background-color;
+}
+
+#submit:hover{
+    background-color: #0075FF;
+    transform: scale(1.05);
+    transition: 0.5s transform;
+}
+
+/* -------------- footer -------------- */
+
+footer {
+    background-image: url(../images/bg.jpg);
+    text-align: center;
+}
+
+.logo{
+    width: 120px;
+    height: auto;
+}
+
+.copyright {
+    color: whitesmoke;
+    font-size: 12px;
+    margin-top: 24px;
+}

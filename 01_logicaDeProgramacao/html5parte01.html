@@ -4,22 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="css3parte01.css">
         
-        <title>Home - Barbealura</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css3barbealura.css">
+        
+        <title> Home - Barbealura</title>
     </head>
     
     <body>
         <header>
             <div class="section-00">
                 
-                <!--
-                <h1>
-                    <img class="logo" src="../images/teste-branco.png" alt="logo">
-                </h1>
-                -->
-                
-                <h1>Barbealura</h1>
+                <h1><a href="html5parte01.html">Barbealura</a></h1>
                 
 
                 <nav>
@@ -33,49 +32,89 @@
         </header>
         
         <!-- Photo by Alwin Kroon on Unsplash -->
-        <img id="img-banner" src="../images/alwin-kroon-banner.jpg" alt="img_barbealura">
+        <img id="img-banner" src="../images/alwin-kroon-banner.jpg" alt="Banner da Barbealura">
 
-        <div id="section-about">
-            <h2 id="titulo-01">Sobre a Barbealura</h2>
+        <main>
+            <section class="dark-background" id="section-about">
+                <h2 class="title-dark-bg">Sobre a Barbealura</h2>
 
-            <!-- Photo by reza gholami on Unsplash -->
-            <img id="img-about" src="../images/estilo-de-vida.jpg" alt="img_sobre">
+                <!-- Photo by reza gholami on Unsplash -->
+                <img id="img-about" src="../images/estilo-de-vida.jpg" alt="img_sobre">
 
-            <div id="paragraphs-about">
-                <p>
-                    No coração da cidade a <strong>Barbealura</strong> traz para o mercado 
-                    o que há de melhor para o seu cabelo e barba. 
-                    Fundada em 2020, a Barbealura já é destaque na cidade 
-                    e conquista novos clientes a cada dia.
-                </p>
+                <div id="paragraphs-about">
+                    <p>
+                        No coração da cidade a <strong>Barbealura</strong> traz para o mercado 
+                        o que há de melhor para o seu cabelo e barba. 
+                        Fundada em 2020, a Barbealura já é destaque na cidade 
+                        e conquista novos clientes a cada dia.
+                    </p>
 
-                <p id="missao">
-                    <strong>
-                        Nossa missão é:<br/>
-                        <em>"Proporcionar auto-estima e qualidade de vida aos clientes"</em>
-                    </strong>
-                </p>
+                    <p id="missao">
+                        <strong>
+                            Nossa missão é:<br/>
+                            <em>"Proporcionar auto-estima e qualidade de vida aos clientes"</em>
+                        </strong>
+                    </p>
 
-                <p>
-                    Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. 
-                    O atendimento possui padrão de excelência e agilidade, 
-                    garantindo qualidade e satisfação dos nossos clientes.
-                </p>
-            </div>
-        </div>
+                    <p>
+                        Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. 
+                        O atendimento possui padrão de excelência e agilidade, 
+                        garantindo qualidade e satisfação dos nossos clientes.
+                    </p>
+                </div>
+            </section>
 
-        <div id="section-benefits">
-            <h2 id="titulo-02">Benefícios</h2>
+            <section class="light-background" id="section-benefits">
+                <h2 class="title-light-bg">Benefícios</h2>
 
-            <ul id="lista-beneficios">
-                <li class="beneficio">Atendimento aos Clientes</li>
-                <li class="beneficio">Espaço diferenciado</li>
-                <li class="beneficio">Localização</li>
-                <li class="beneficio">Profissionais Qualificados</li>
-            </ul>
+                <ul id="lista-beneficios">
+                    <li class="beneficio">Atendimento aos Clientes</li>
+                    <li class="beneficio">Espaço diferenciado</li>
+                    <li class="beneficio">Localização</li>
+                    <li class="beneficio">Profissionais Qualificados</li>
+                    <li class="beneficio">Pontualidade</li>
+                    <li class="beneficio">Limpeza</li>
+                </ul>
 
-            <img id="img-beneficios" src="../images/beneficios.jpg" alt="img_benefícos">
-        </div>
+                <img id="img-beneficios" src="../images/beneficios.jpg" alt="img_benefícos">
+            </section>
+
+            <section class="dark-background" id="section-video">
+                <h2 class="title-dark-bg">Nosso trabalho</h2>
+
+                <div class="video-trailer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wcVVXUV0YUY" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="light-background" id="section-map">
+                <h2 class="title-light-bg">Venha nos visitar</h2>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82756.71906154831!2d-46.656553325067414!3d-23.555337190177088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sCaelum%20-%20Escola%20de%20Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1592772629031!5m2!1spt-BR!2sbr" width="50%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+                <table>
+                    <thead>
+                        <tr id="tabela-titulo">
+                            <th colspan="2">Aberto</th>
+                        </tr>
+                        <tr>
+                            <th>Dia</th>
+                            <th>Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Segunda à Sexta</td>
+                            <td>07:00 - 20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sábado e Domingo</td>
+                            <td>08:00 - 18:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
 
         <footer>
             <dir class="section-00">
