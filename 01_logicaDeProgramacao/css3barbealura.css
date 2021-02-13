@@ -346,3 +346,24 @@ footer {
     font-size: 12px;
     margin-top: 24px;
 }
+
+/**************** DEVICES **********************/
+
+@media screen and (max-width: 480px){
+    .section-00, section, form{
+        width: auto;
+    }
+
+    nav, h1{
+        display: block;
+    }
+
+    h1{
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    nav{
+        position: static;
+    }
+}
